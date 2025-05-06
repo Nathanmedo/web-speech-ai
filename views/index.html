@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speaking Bot</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="bot-container">
+        <h1>🎙️ Talking Bot</h1>
+        <div class="bot-face">🤖</div>
+        <div class="track-speech"></div>
+        <div style="display: flex; flex-direction: row; gap: 4px;">
+            <button id="click-button">
+                Talk to me.
+            </button>
+            <button class="stop-button" style="background-color: red; color: white;"><i class="fa-solid fa-pause"></i></button>
+        </div>
+
+        <div class="log" id="log">Click the button and say something!</div>
+
+    </div>
+    <!-- 📋 Transcript Section -->
+    <div class="transcript">
+        <h2>Conversation</h2>
+        <div class="user-output">
+            <strong>You:</strong>
+            <p id="userText">...</p>
+        </div>
+        <div class="bot-output">
+            <strong>Bot:</strong>
+            <p id="botText">...</p>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

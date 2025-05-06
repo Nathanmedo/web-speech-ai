@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1d3557, #457b9d);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .bot-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .bot-face {
+    font-size: 4rem;
+    margin: 1rem 0;
+    padding: .25rem;
+    background-color: orange;
+    border-radius: 50%;
+  }
+
+  #click-button {
+    background: #f1faee;
+    color: #1d3557;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .stop-button{
+    padding: 0.75rem 1.4rem;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  button:hover {
+    background: #a8dadc;
+  }
+
+  .log {
+    margin-top: 1rem;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #f1faee;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      background-color: 0 0 0 0 rgba(43, 45, 66, 0.7);
+    }
+    70% {
+      transform: scale(1.1);
+      background-color: 0 0 0 20px rgba(43, 45, 66, 0);
+    }
+    100% {
+      transform: scale(1);
+      background-color: 0 0 0 0 rgba(43, 45, 66, 0);
+    }
+  }
+  
+  .pulse {
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes listen-pulse {
+    0% {
+      background-color: #ffcccc;
+    }
+    50% {
+      background-color: #ff9999;
+    }
+    100% {
+      background-color: #ffcccc;
+    }
+  }
+  
+  .bot-listening {
+    animation: listen-pulse 1.2s infinite;
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  .transcript{
+    width: 80vw;
+    
+  }
+  .transcript p{
+    word-wrap: break-word;
+  }
+  
+  .track-speech{
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+    background: #d23b3b;
+    padding: 0.25rem 1rem;
+    border-radius: 10px;
+    animation: pulse 1.2s infinite ease-in-out;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
