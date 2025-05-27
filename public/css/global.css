@@ -122,3 +122,46 @@ body {
     display: inline-block;
     margin-bottom: 1rem;
   }
+
+  /* Text Input Container Styles */
+  .text-input-container {
+    width: 80vw;
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  #userInput {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    resize: none;
+    min-height: 60px;
+  }
+
+  #userInput::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .send-button {
+    background: #f1faee;
+    color: #1d3557;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .send-button:hover {
+    background: #a8dadc;
+  }

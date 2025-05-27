@@ -6,12 +6,12 @@ const botOutput = document.querySelector('#botText')
 const botFace = document.querySelector('.bot-face')
 const stopButton = document.querySelector('.stop-button')
 const speechStatus = document.querySelector('.track-speech')
+const userInput = document.querySelector('#userInput')
+const sendButton = document.querySelector('#sendButton')
 console.log(speakButton, userOutput, botOutput, stopButton)
-
 
 //speech recognition - to transcribe users word to text string
 const speechRecognition = window.speechRecognition || window.webkitSpeechRecognition;
-
 
 const recognition = new speechRecognition()
 
@@ -68,16 +68,34 @@ recognition.addEventListener('result', (e)=>{
         if (data === '') botOutput.textContent = 'No Answer'
         speechStatus.textContent = "Bot Speaking..."
         botOutput.textContent = data
-
     });
-
 })
 
+// Text input and send button functionality
+sendButton.addEventListener('click', () => {
+    const text = userInput.value.trim()
+    if (text) {
+        userOutput.textContent = text
+        socket.emit('chat message', text)
+        userInput.value = '' // Clear the input after sending
+        
+        socket.off('bot reply')
+        socket.on('bot reply', (data) => {
+            if (data === '') botOutput.textContent = 'No Answer'
+            botOutput.textContent = data
+        })
+    }
+})
 
+// Allow sending message with Enter key
+userInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault() // Prevent new line
+        sendButton.click()
+    }
+})
 
 //speech synthesis - to read out the bot response
-
 stopButton.addEventListener('click', ()=>{
-    // const synth = window.speechSynthesis;
     window.speechSynthesis.cancel()
 })
