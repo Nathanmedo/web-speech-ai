@@ -165,3 +165,51 @@ body {
   .send-button:hover {
     background: #a8dadc;
   }
+
+  /* Markdown Styles */
+  #botText {
+    line-height: 1.6;
+  }
+
+  #botText ul, #botText ol {
+    margin: 0.5em 0;
+    padding-left: 2em;
+  }
+
+  #botText li {
+    margin: 0.3em 0;
+  }
+
+  #botText strong {
+    color: #f1faee;
+  }
+
+  #botText em {
+    color: #a8dadc;
+  }
+
+  #botText h1, #botText h2, #botText h3 {
+    margin: 0.5em 0;
+    color: #f1faee;
+  }
+
+  #botText code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: monospace;
+  }
+
+  #botText pre {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto;
+  }
+
+  #botText blockquote {
+    border-left: 3px solid #a8dadc;
+    margin: 0.5em 0;
+    padding-left: 1em;
+    color: #a8dadc;
+  }

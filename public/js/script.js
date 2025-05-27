@@ -10,6 +10,13 @@ const userInput = document.querySelector('#userInput')
 const sendButton = document.querySelector('#sendButton')
 console.log(speakButton, userOutput, botOutput, stopButton)
 
+// Configure marked options
+marked.setOptions({
+    breaks: true,  // Convert line breaks to <br>
+    gfm: true,     // Enable GitHub Flavored Markdown
+    headerIds: false // Disable header IDs for security
+});
+
 //speech recognition - to transcribe users word to text string
 const speechRecognition = window.speechRecognition || window.webkitSpeechRecognition;
 
@@ -67,7 +74,7 @@ recognition.addEventListener('result', (e)=>{
 
         if (data === '') botOutput.textContent = 'No Answer'
         speechStatus.textContent = "Bot Speaking..."
-        botOutput.textContent = data
+        botOutput.innerHTML = marked.parse(data)
     });
 })
 
@@ -82,7 +89,7 @@ sendButton.addEventListener('click', () => {
         socket.off('bot reply')
         socket.on('bot reply', (data) => {
             if (data === '') botOutput.textContent = 'No Answer'
-            botOutput.textContent = data
+            botOutput.innerHTML = marked.parse(data)
         })
     }
 })
