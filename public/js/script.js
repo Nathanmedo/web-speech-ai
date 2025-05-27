@@ -1,4 +1,4 @@
-const socket = io("localhost:5000")
+const socket = io("https://web-speech-ai-2uvz.onrender.com/")
 
 const speakButton = document.querySelector('#click-button')
 const userOutput = document.querySelector('#userText')
